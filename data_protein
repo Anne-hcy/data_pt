@@ -1,3 +1,27 @@
+# coding = utf - 8
+import re
+import os
+import shutil
+import numpy as np
+import pandas as pd
+import requests
+import logging
+import h5py
+import json
+from tqdm import tqdm
+
+from Bio import PDB, SeqIO
+from Bio.PDB import PDBParser
+from Bio.PDB.Polypeptide import PPBuilder
+from Bio.SeqUtils import seq1
+#from Bio.Data.SCOPData import protein_letters_3to1 # deprecated after v1.78
+
+from itertools import permutations
+from itertools import chain
+from collections import Counter
+
+import matplotlib.pyplot as plt
+import seaborn as sns
 class ProteinNSeq:
     """用於處理 PDB 文件的類，提供提取蛋白質名稱、序列和比較功能。"""
     
